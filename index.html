@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <!-- js 100. email CDN-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <!-- 🍖js 100. email userID-->
+        <script type="text/javascript">
+        (function() {
+        emailjs.init("user_kc908ztFICcO8xzBoYSrW");
+        })();
+        </script>
+
+
+</head>
+<body>
+    <h1>email.js</h1>
+
+        <!-- 🍉email.js -->
+        <div class="contact-form"> 
+            <div class="grid-a ">          
+              <input type="text" id="fromName" placeholder="Enter your name">     
+            </div>
+    
+            <div class="grid-a ">        
+              <input type="text" id="toName" value="IG Kim">
+            </div>
+    
+            <div class="grid-a ">          
+              <textarea name="" id="msg" cols="50" rows="5" placeholder="Enter your message"></textarea>  
+            </div>
+    
+            <button onclick="sendMail()" class="my_github sendMail-btn">Send Email</button>
+          </div>
+    
+    
+
+    <script>
+        // js100, email
+
+            function sendMail(){
+            let tempParams = {
+                from_name : document.querySelector("#fromName").value,
+                to_name : document.querySelector("#toName").value,
+                message : document.querySelector("#msg").value,
+            }
+
+            emailjs.send('igkim-gmail','template_gbp2qug',tempParams).then(function (res){
+                console.log('success',res.status);    
+            })
+            }
+
+    </script>
+</body>
+</html>
