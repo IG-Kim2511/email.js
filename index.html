@@ -26,9 +26,18 @@
             <div class="grid-a ">          
               <input type="text" id="fromName" placeholder="Enter your name">     
             </div>
+            <div class="grid-a ">          
+              <input type="email" id="email" placeholder="Enter your email">     
+            </div>
     
             <div class="grid-a ">        
               <input type="text" id="toName" value="IG Kim">
+            </div>
+            <div class="grid-a ">        
+              <input type="text" id="title" placeholder="Enter your title">
+            </div>
+            <div class="grid-a ">        
+              <input type="text" id="address" placeholder="Enter your address">
             </div>
     
             <div class="grid-a ">          
@@ -48,6 +57,9 @@
                 from_name : document.querySelector("#fromName").value,
                 to_name : document.querySelector("#toName").value,
                 message : document.querySelector("#msg").value,
+                title : document.querySelector("#title").value,
+                address : document.querySelector("#address").value,
+                email : document.querySelector("#email").value,
             }
 
             emailjs.send('igkim-gmail','template_gbp2qug',tempParams).then(function (res){
